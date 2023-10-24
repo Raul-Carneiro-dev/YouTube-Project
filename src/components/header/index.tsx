@@ -96,7 +96,7 @@ function Header() {
 
                     </>
                     :
-                        <LoginButton onClick={() => navigate('/login')}>Fazer login</LoginButton>
+                        <LoginButton onClick={() => alert("Função em Desenvolvimento")}>Fazer login</LoginButton>
                 }
             </HeaderButton>
         </Container>
