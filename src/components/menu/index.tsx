@@ -12,7 +12,7 @@ import {
 import { useNavigate } from 'react-router-dom';
 
 const firstCore = [
-    {id: '1', title: 'Inicio', icone: 'https://lordicon.com/icons/system/outline/41-home.svg', link: '/'}, 
+    {id: '1', title: 'Inicio', icone: 'https://icons.veryicon.com/png/o/miscellaneous/skent-icon/home-225.png', link: '/'}, 
     {id: '2', title: 'Shorts', icone: 'https://www.iconpacks.net/icons/5/free-icon-youtube-shorts-logo-15252.png', link: '/shorts'}, 
     {id: '3', title: 'Inscrições', icone: 'https://cdn.icon-icons.com/icons2/2248/PNG/512/youtube_subscription_icon_136007.png', link: '/inscricoes'}
 ]
