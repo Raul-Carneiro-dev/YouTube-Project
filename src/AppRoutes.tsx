@@ -10,6 +10,7 @@ import { UserStore } from "./contexts/openmenu";
 import { UserStorage } from "./context/userContext";
 import Register from "./pages/register";
 import RegisterVideos from "./pages/registerVideos";
+import { CategoryContexts, CategoryStore } from "./contexts/searchcategory";
 
 
 const AppRoutes = () => {
@@ -18,12 +19,14 @@ const AppRoutes = () => {
         <Router>
             <UserStorage>
                 <UserStore>
-                    <Routes>
-                        <Route path="/" element={<Home />} />
-                        <Route path="/login" element={<Login />} />
-                        <Route path="/register" element={<Register />} />
-                        <Route path="/registervideos" element={<RegisterVideos />} />
-                    </Routes>
+                    <CategoryStore>
+                        <Routes>
+                            <Route path="/" element={<Home />} />
+                            <Route path="/login" element={<Login />} />
+                            <Route path="/register" element={<Register />} />
+                            <Route path="/registervideos" element={<RegisterVideos />} />
+                        </Routes>
+                    </CategoryStore>
                 </UserStore>
             </UserStorage>
         </Router>

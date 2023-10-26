@@ -21,9 +21,9 @@ export const UserStorage = ({ children }: any) => {
     }
 
 
-    // useEffect(() => {
-    //     getUser(token);
-    // }, [token]);
+    useEffect(() => {
+        getUser(token);
+    }, [token]);
 
     const logOut = () => {
         localStorage.removeItem('token');

@@ -7,53 +7,75 @@ import {
 } from './styles';
 import { UserContexts } from '../../contexts/openmenu';
 import SetIcon from '../../assets/216151_right_chevron_icon.png'
+import { CategoryContexts } from '../../contexts/searchcategory';
 
 function Category() {
 
-    const {color, setColor} = useContext(UserContexts);
+    const {color, openMenu} = useContext(UserContexts);
+    const {setCategoryId} = useContext(CategoryContexts)
 
-    const carousel = useRef(null);
+    const carousel = useRef(null as any);
 
     const category = [
-        {id: '1', name: 'Terror'},
-        {id: '2', name: 'Ao vivo'},
-        {id: '3', name: 'Jogos'},
-        {id: '4', name: 'Música'},
-        {id: '5', name: 'Comédia'},
-        {id: '6', name: 'Romance'},
-        {id: '7', name: 'Ficção cientifica'},
-        {id: '8', name: 'Música popular brasileira'},
-        {id: '9', name: 'Notícias'},
-        {id: '10', name: 'Assistidos'},
-        {id: '11', name: 'Assistidos'},
-        {id: '12', name: 'Assistidos'},
-        {id: '13', name: 'Assistidos'},
-        {id: '14', name: 'Assistidos'},
-        {id: '15', name: 'Assistidos'},
-        {id: '16', name: 'Assistidos'},
-        {id: '17', name: 'Assistidos'},
-        {id: '18', name: 'Assistidos'},
-        {id: '19', name: 'Assistidos'},
-        {id: '20', name: 'Assistidos'},
-        {id: '21', name: 'Assistidos'},
-        {id: '22', name: 'Assistidos'},
-       
+        { id: '0', name: 'Tudo'},
+        { id: '20', name: 'Games'},
+        { id: '17', name: 'Futebol'},
+        { id: '24', name: 'Entretenimento'},
+        { id: '10', name: 'Música'},
+        { id: '22', name: 'Pessoas e blogs'},
+        { id: '2', name: 'Automóveis e veículos'},
+        { id: '15', name: 'Animais e pets'},
+        { id: '25', name: 'Notícias e política'},
+        { id: '23', name: 'Comédia'},
+        { id: '26', name: 'Shorts'},
+        { id: '1', name: 'Infantil'},
+        { id: '22', name: 'Vida a dois'},
+        { id: '17', name: 'Esportes'},
+        { id: '23', name: 'Memes'},
+        { id: '20', name: 'Jogos pc'},
+        { id: '25', name: 'Jornais'},
+        { id: '1', name: 'Kids'},
+        { id: '10', name: 'Hits do momento'},
+        { id: '22', name: 'História das civilizações'},
+        { id: '15', name: 'Ciências'},
+        { id: '24', name: 'Viagens pelo mundo'},
+        { id: '23', name: 'Séries'},
+        { id: '24', name: 'Novidades'},
+        { id: '1', name: 'Educação'}, 
+        { id: '2', name: 'Ciência e tecnologia'}, 
+        { id: '26', name: 'Documentários'}, 
+        { id: '25', name: 'Economia'}, 
+        { id: '20', name: 'Investimentos e finanças'}, 
+        { id: '23', name: 'Moda e estilo'},
+        { id: '10', name: 'Comunicação'},
+        { id: '24', name: 'Beleza'},
     ]
 
-   
-    
+    function searchCategory(id: string) {
+        setCategoryId(id)
+    }
+
+    const handleLeftClick = (e: any) => {
+        e.preventDefault();
+        carousel.current.scrollLeft -= carousel.current.offsetWidth
+    }
+
+    const handleRighttClick = (e: any) => {
+        e.preventDefault();
+        carousel.current.scrollLeft += 350
+    }
 
     return(
-        <Container>
-            <ButtonContainer >
+        <Container openMenu={openMenu}>
+            <ButtonContainer onClick={handleLeftClick}>
                 <ButtonIcon  alt="sidebar" src={SetIcon} />
             </ButtonContainer>
             <Carousel color={color} ref={carousel}>
-                {category.map((information) => (
-                    <div onClick={() => setColor(!color)} key={information.id}>{information.name}</div>
+                {category.map((information, index) => (
+                    <button onClick={() => searchCategory(information.id)} key={index}>{information.name}</button>
                 ))}
             </Carousel>
-            <ButtonContainer >
+            <ButtonContainer onClick={handleRighttClick}>
                 <ButtonIcon alt="sidebar" src={SetIcon} />
             </ButtonContainer>
         </Container>

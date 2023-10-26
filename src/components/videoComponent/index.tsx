@@ -14,6 +14,7 @@ import {
  import Category from '../../components/categorias';
 import axios from 'axios';
 import moment from 'moment';
+import { CategoryContexts } from '../../contexts/searchcategory';
 
 function VideoComponent() {
 
@@ -39,15 +40,17 @@ function VideoComponent() {
         }
       }
 
-      const [videos, setVideos] = useState<Videos[]>([])
+      const [videos, setVideos] = useState<Videos[]>([]);
+      const {categoryId} = useContext(CategoryContexts);
+      console.log(categoryId)
 
       const API_KEY = 'AIzaSyDQdA6cW_D8IwKyMHrxHeNDGu0LLsUr3lA';
 
-      const url = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet&part=statistics&chart=mostPopular&hl=pt_BR&maxResults=48&regionCode=br&videoCategoryId=0&key=${API_KEY}`
+      const url = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet&part=statistics&chart=mostPopular&hl=pt_BR&maxResults=48&regionCode=br&videoCategoryId=${categoryId}&key=${API_KEY}`
       
       useEffect(() => {
         load()
-      },[])
+      },[categoryId])
 
       async function load() {
         try {

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  width: 75rem;
+export const Container = styled.div<{ openMenu: boolean }>`
+  width: ${({openMenu}) => openMenu? '78rem' : '87rem' };
   display: flex;
   align-items: center;
   justify-content: center;
@@ -9,7 +9,7 @@ export const Container = styled.div`
 
 `;
 
-export const Carousel = styled.div<{ color: boolean }>`
+export const Carousel = styled.div`
   width: 100%;
   height: 40px;
   display: flex;
@@ -22,11 +22,12 @@ export const Carousel = styled.div<{ color: boolean }>`
     display: none;
   }
 
-  div {
+  button {
     height: 32px;
     background-color: ${({color}) => color? 'black' : '#F2F2F2'};
     color: ${({color}) => color? 'white' : 'black'};
     border-radius: 10px;
+    border: none;
     padding: 0 12px;
     margin: 0 6px;
     display: flex;
@@ -40,7 +41,7 @@ export const Carousel = styled.div<{ color: boolean }>`
     flex: none;
   }
 
-  div:hover {
+  button:hover {
     background-color: ${({color}) => color? 'none' : '#e6e6e6'};
   }
 `;
