@@ -7,6 +7,10 @@ export const Container = styled.div<{ openMenu: boolean }>`
   justify-content: center;
   column-gap: 5px;
 
+  @media (max-width: 768px) {
+    width: 22rem;
+  }
+
 `;
 
 export const Carousel = styled.div`
@@ -63,6 +67,10 @@ export const ButtonContainer = styled.div`
 
   &:first-child img {
     transform: rotate(180deg)
+  }
+
+  @media (max-width: 768px) {
+    display: none;
   }
 
 `;

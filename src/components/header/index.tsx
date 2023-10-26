@@ -14,7 +14,8 @@ import {
     UserContainer,
     UserInfo,
     LogOut,
-    LogOutContent
+    LogOutContent,
+    MenuMobileButton
 
  } from "./styles";
 
@@ -96,7 +97,10 @@ function Header() {
 
                     </>
                     :
+                    <>
                         <LoginButton onClick={() => navigate('/login')}>Fazer login</LoginButton>
+                        <MenuMobileButton onClick={() => navigate('/login')}/>
+                    </>
                 }
             </HeaderButton>
         </Container>

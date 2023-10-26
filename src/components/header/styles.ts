@@ -12,11 +12,20 @@ export const Container = styled.header`
   position: sticky;
   top: 0;
 
+  @media (max-width: 768px) {
+    display: flex;
+    padding: 0;
+  }
+
 `;
 
 export const LogoContainer = styled.div`
   display: flex;
   align-items: center;
+
+  @media (max-width: 768px) {
+    margin-left: 2px;
+  }
 `;
 
 export const ButtonContainer = styled.div<{ margin?: string, backgroundcolor?: any }>`
@@ -34,12 +43,19 @@ export const ButtonContainer = styled.div<{ margin?: string, backgroundcolor?: a
   &:hover {
     background-color: #f2f2f2;
   }
-
+  
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const ButtonIcon = styled.img`
   width: 20px;
   cursor: pointer;
+
+  @media (max-width: 768px) {
+    width: 15px;
+  }
 `;
 
 export const SearchContainer = styled.div`
@@ -54,6 +70,11 @@ export const SearchInputContainer = styled.div`
   display: flex;
   align-items: center;
   padding: 0 16px;
+
+  @media (max-width: 768px) {
+    width: 145px;
+    height: 20px;
+  }
 `;
 
 export const SearchInput = styled.input`
@@ -61,6 +82,10 @@ export const SearchInput = styled.input`
   height: 25px;
   outline: none;
   border: none;
+
+  @media (max-width: 768px) {
+    height: 15px;
+  }
 `;
 
 export const SearchButton = styled.div`
@@ -73,14 +98,23 @@ export const SearchButton = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
+
+  @media (max-width: 768px) {
+    width: 35px;
+    height: 20px;
+  
+  }
 `;
 
 export const HeaderButton = styled.div`
   width: 200px;
   display: flex;
-  display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 768px) {
+    width: auto;
+  }
 `;
 
 export const LoginButton = styled.button`
@@ -97,6 +131,10 @@ export const LoginButton = styled.button`
   margin-left: 10px;
   position: absolute;
   right: 1rem;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const DropMenu = styled.div<{ dropmenu: boolean }>`
@@ -159,5 +197,20 @@ export const LogOutContent = styled.div`
 
   &:hover {
     background-color: #E5E5E5;
+  }
+`;
+
+export const MenuMobileButton = styled.button`
+  display: none;
+
+  @media (max-width: 768px) {
+    display: flex;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/5987/5987462.png');
+    background-size: cover;
+    margin-right: 3px;
   }
 `;

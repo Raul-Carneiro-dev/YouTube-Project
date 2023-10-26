@@ -15,6 +15,14 @@ export const Container = styled.div<{ openmenu: boolean }>`
   column-gap: 15px;
   row-gap: 50px;
   padding-bottom: 70px;
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 20px;
+    padding-bottom: 30px;
+  }
 `;
 
 export const ImageBanner = styled.img<{ openmenu: boolean }>`
@@ -26,6 +34,10 @@ export const ImageBanner = styled.img<{ openmenu: boolean }>`
 
   &:hover {
     background-image: url('https://media.tenor.com/i2ykUtROILwAAAAC/michael-jackson-thriller.gif');
+  }
+
+  @media (max-width: 768px) {
+    height: 209px;
   }
 `;
 

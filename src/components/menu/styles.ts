@@ -22,6 +22,10 @@ export const Container = styled.div<{ openmenu: boolean}>`
     font-family: Roboto, Arial, sans-serif;
     text-align: center;
   }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const SecondCore = styled.div`
