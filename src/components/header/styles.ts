@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.header`
   width: 100%;
   height: 55px;
-  background-color: #fff;
+  background-color: #ffff;
   padding: 0 16px;
   box-sizing: border-box;
   display: flex;
@@ -14,7 +14,7 @@ export const Container = styled.header`
 
   @media (max-width: 768px) {
     display: flex;
-    padding: 0;
+    padding: 5px;
   }
 
 `;
@@ -88,7 +88,6 @@ export const SearchInput = styled.input`
 
   @media (max-width: 768px) {
     height: 15px;
-    margin-left: 1rem;
   }
 `;
 
