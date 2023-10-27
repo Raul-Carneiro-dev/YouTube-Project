@@ -20,7 +20,7 @@ import {
  } from "./styles";
 
 import HamburgerIcon from '../../assets/hamburger.png';
-import YoutubeLogo from '../../assets/YouTube-Logo.png';
+import YoutubeLogo from '../../assets/YouTube-Icon-Full.png';
 import SearchIcon from '../../assets/search.png';
 import MicIcon from '../../assets/microfone-gravador.png';
 import VideoIcon from '../../assets/video.png';
@@ -49,6 +49,7 @@ function Header() {
                    alt="youtube-logo"
                    src={YoutubeLogo}               
                 />
+                <span>YouTube</span>
             </LogoContainer>
 
             <SearchContainer>

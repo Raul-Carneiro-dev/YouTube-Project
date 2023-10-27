@@ -24,7 +24,21 @@ export const LogoContainer = styled.div`
   align-items: center;
 
   @media (max-width: 768px) {
+    width: 20px;
+    height: 30px;
     margin-left: 8px;
+
+    img {
+      width: 20px;
+      height: 30px;
+    }
+
+    span {
+      color: black;
+      font-size: 15px;
+      font-family: Roboto, Arial, sans-serif;
+      font-weight: 600;
+    }
   }
 `;
 
@@ -60,6 +74,10 @@ export const ButtonIcon = styled.img`
 
 export const SearchContainer = styled.div`
   display: flex;
+
+  @media (max-width: 768px) {
+    margin-left: 6rem;
+  }
 `;
 
 export const SearchInputContainer = styled.div`
@@ -88,6 +106,9 @@ export const SearchInput = styled.input`
 
   @media (max-width: 768px) {
     height: 15px;
+    border-radius: 12px;
+    background-color: silver;
+    padding: 2px;
   }
 `;
 
