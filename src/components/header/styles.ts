@@ -24,7 +24,7 @@ export const LogoContainer = styled.div`
   align-items: center;
 
   @media (max-width: 768px) {
-    margin-left: 2px;
+    margin-left: 4px;
   }
 `;
 
@@ -72,7 +72,7 @@ export const SearchInputContainer = styled.div`
   padding: 0 16px;
 
   @media (max-width: 768px) {
-    width: 145px;
+    width: 120px;
     height: 20px;
   }
 `;
@@ -211,6 +211,6 @@ export const MenuMobileButton = styled.button`
     border: none;
     background-image: url('https://cdn-icons-png.flaticon.com/512/5987/5987462.png');
     background-size: cover;
-    margin-right: 3px;
+    margin-right: 5px;
   }
 `;

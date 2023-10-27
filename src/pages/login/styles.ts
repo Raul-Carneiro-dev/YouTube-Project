@@ -59,4 +59,9 @@ export const LoginContent = styled.div`
     margin-left: 5px;
   }
 
+  @media (max-width: 768px) {
+    width: 340px;
+    height: 440px;
+  }
+
 `;
