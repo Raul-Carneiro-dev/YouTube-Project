@@ -24,7 +24,7 @@ export const LogoContainer = styled.div`
   align-items: center;
 
   @media (max-width: 768px) {
-    margin-left: 4px;
+    margin-left: 8px;
   }
 `;
 
@@ -74,6 +74,9 @@ export const SearchInputContainer = styled.div`
   @media (max-width: 768px) {
     width: 120px;
     height: 20px;
+    border: none;
+    background-color: #ffff;
+    padding: 0;
   }
 `;
 
@@ -85,6 +88,7 @@ export const SearchInput = styled.input`
 
   @media (max-width: 768px) {
     height: 15px;
+    margin-left: 1rem;
   }
 `;
 
@@ -100,8 +104,10 @@ export const SearchButton = styled.div`
   cursor: pointer;
 
   @media (max-width: 768px) {
-    width: 35px;
+    width: 30px;
     height: 20px;
+    border: none;
+    background-color: #ffff;
   
   }
 `;
@@ -211,6 +217,6 @@ export const MenuMobileButton = styled.button`
     border: none;
     background-image: url('https://cdn-icons-png.flaticon.com/512/5987/5987462.png');
     background-size: cover;
-    margin-right: 5px;
+    margin-right: 8px;
   }
 `;
