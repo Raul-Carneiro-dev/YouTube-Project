@@ -47,6 +47,7 @@ function Header() {
                 <img
                    style={{cursor: 'pointer', width: '100px'}}
                    alt="youtube-logo"
+                   className='youtube-icon'
                    src={YoutubeLogo}               
                 />
                 <span>YouTube</span>

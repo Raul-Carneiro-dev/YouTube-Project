@@ -7,6 +7,25 @@ export const LoginContainer = styled.div`
   justify-content: center;
 `;
 
+export const LogoContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+
+  .title-login {
+    max-width: 80px;
+    max-height: 60px;
+  }
+
+  span {
+    color: black;
+    font-size: 30px;
+    font-family: Roboto, Arial, sans-serif;
+    font-weight: 600;
+  }
+`;
+
 export const LoginContent = styled.div`
   width: 448px;
   height: 500px;

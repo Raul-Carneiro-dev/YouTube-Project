@@ -23,6 +23,17 @@ export const LogoContainer = styled.div`
   display: flex;
   align-items: center;
 
+  .youtube-icon {
+    max-width: 60px;
+  }
+
+  span {
+    color: black;
+    font-size: 18px;
+    font-family: Roboto, Arial, sans-serif;
+    font-weight: 600;
+  }
+
   @media (max-width: 768px) {
     width: 20px;
     height: 30px;
