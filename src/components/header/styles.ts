@@ -15,6 +15,7 @@ export const Container = styled.header`
   @media (max-width: 768px) {
     display: flex;
     padding: 5px;
+    z-index: 100;
   }
 
 `;

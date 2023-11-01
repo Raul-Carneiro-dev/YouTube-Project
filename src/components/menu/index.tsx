@@ -13,8 +13,8 @@ import { useNavigate } from 'react-router-dom';
 
 const firstCore = [
     {id: '1', title: 'Inicio', icone: 'https://icons.veryicon.com/png/o/miscellaneous/skent-icon/home-225.png', link: '/'}, 
-    {id: '2', title: 'Shorts', icone: 'https://www.iconpacks.net/icons/5/free-icon-youtube-shorts-logo-15252.png', link: '/shorts'}, 
-    {id: '3', title: 'Inscrições', icone: 'https://cdn.icon-icons.com/icons2/2248/PNG/512/youtube_subscription_icon_136007.png', link: '/inscricoes'}
+    {id: '2', title: 'Shorts', icone: 'https://www.iconpacks.net/icons/5/free-icon-youtube-shorts-logo-15252.png', link: '/'}, 
+    {id: '3', title: 'Inscrições', icone: 'https://cdn.icon-icons.com/icons2/2248/PNG/512/youtube_subscription_icon_136007.png', link: '/'}
 ]
 
 const secondCore = [
@@ -71,7 +71,7 @@ function Menu() {
             </BetweenCore>
             <SecondCore>
                 {secondCore.map((description) => (
-                    <MenuItemSecondCore openmenu={openMenu} key={description.id} onClick={() => navigate(description.link)}>
+                    <MenuItemSecondCore openmenu={openMenu} key={description.id} onClick={() => alert("Função em desenvolvimento")}>
                         <ButtonIcon alt="NotificationIcon" src={description.icone} />
                         <span>{description.title}</span>
                     </MenuItemSecondCore>
@@ -82,7 +82,7 @@ function Menu() {
             <SecondCore>
                 <span className='title-core'>Explorar</span>
                 {thirdCore.map((description) => (
-                    <MenuItemSecondCore openmenu={openMenu} key={description.id} onClick={() => navigate(description.link)}>
+                    <MenuItemSecondCore openmenu={openMenu} key={description.id} onClick={() => alert("Função em desenvolvimento")}>
                         <ButtonIcon  alt="NotificationIcon" src={description.icone} />
                         <span>{description.title}</span>
                     </MenuItemSecondCore>
@@ -93,7 +93,7 @@ function Menu() {
             <SecondCore>
                 <span className='title-core' style={{marginRight: '20%'}}>Mais do YouTube</span>
                 {fourthCore.map((description) => (
-                    <MenuItemSecondCore openmenu={openMenu} key={description.id} onClick={() => navigate(description.link)}>
+                    <MenuItemSecondCore openmenu={openMenu} key={description.id} onClick={() => alert("Função em desenvolvimento")}>
                         <ButtonIcon  alt="NotificationIcon" src={description.icone} />
                         <span>{description.title}</span>
                     </MenuItemSecondCore>
@@ -103,7 +103,7 @@ function Menu() {
             </SecondCore>
             <SecondCore>
                 {fivethCore.map((description) => (
-                    <MenuItemSecondCore openmenu={openMenu} key={description.id} onClick={() => navigate(description.link)}>
+                    <MenuItemSecondCore openmenu={openMenu} key={description.id} onClick={() => alert("Função em desenvolvimento")}>
                         <ButtonIcon  alt="NotificationIcon" src={description.icone} />
                         <span>{description.title}</span>
                     </MenuItemSecondCore>

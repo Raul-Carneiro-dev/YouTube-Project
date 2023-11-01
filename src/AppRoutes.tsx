@@ -1,3 +1,4 @@
+import { useContext } from 'react'
 import {
     BrowserRouter as Router,
     Route,
@@ -11,6 +12,9 @@ import { UserStorage } from "./context/userContext";
 import Register from "./pages/register";
 import RegisterVideos from "./pages/registerVideos";
 import { CategoryContexts, CategoryStore } from "./contexts/searchcategory";
+import SearchPage from "./pages/searchPage";
+import { SearchStore } from "./contexts/searchContext";
+import VideoPages from "./pages/videoPages";
 
 
 const AppRoutes = () => {
@@ -20,12 +24,15 @@ const AppRoutes = () => {
             <UserStorage>
                 <UserStore>
                     <CategoryStore>
-                        <Routes>
-                            <Route path="/" element={<Home />} />
-                            <Route path="/login" element={<Login />} />
-                            <Route path="/register" element={<Register />} />
-                            <Route path="/registervideos" element={<RegisterVideos />} />
-                        </Routes>
+                        <SearchStore>
+                            <Routes>
+                                <Route path="/" element={<Home />} />
+                                <Route path="/search" element={<SearchPage />} />
+                                <Route path="/login" element={<Login />} />
+                                <Route path="/register" element={<Register />} />
+                                <Route path="/registervideos" element={<RegisterVideos />} />
+                            </Routes>
+                        </SearchStore>
                     </CategoryStore>
                 </UserStore>
             </UserStorage>

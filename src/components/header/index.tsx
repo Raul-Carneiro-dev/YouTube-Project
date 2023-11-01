@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useRef, useState } from 'react';
 import { 
     Container,
     LogoContainer,
@@ -28,6 +28,7 @@ import NotificationIcon from '../../assets/sino.png';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../../context/userContext';
 import { UserContexts } from '../../contexts/openmenu';
+import { SearchContexts } from '../../contexts/searchContext';
 
 
 function Header() {
@@ -35,6 +36,13 @@ function Header() {
     const { openMenu, setOpenMenu } = useContext(UserContexts);
     const {login, logOut, user} = useContext(UserContext);
     const [dropMenu, setDropMenu] = useState(false)
+    const {setSearch} = useContext(SearchContexts)
+    
+    const [inputValue, setInputValue] = useState('')
+
+    function handleInput(inputValue: string ) {
+        setInputValue(inputValue)
+    }
 
     const navigate = useNavigate();
 
@@ -55,9 +63,28 @@ function Header() {
 
             <SearchContainer>
                 <SearchInputContainer>
-                    <SearchInput placeholder="Pesquisar"/>
+                    <SearchInput 
+                      placeholder="Pesquisar"
+                      value={inputValue}
+                      onChange={(e) => {
+                        handleInput(e.target.value)
+                      }}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter") {
+                            setSearch(inputValue)
+                        }
+                      }}
+                      />
                 </SearchInputContainer>
-                <SearchButton>
+                <SearchButton onClick={() => {
+                    if(inputValue.trim() === '') {
+                        alert('Digite alguma palavra antes de tentar pesquisar')
+                    } else {
+                        setSearch(inputValue)
+                        navigate('/search')
+                    }
+                    
+                }}>
                     <ButtonIcon alt="search" src={SearchIcon}/>
                 </SearchButton>
                 <ButtonContainer margin='0 0 0 10px' backgroundcolor='#f2f2f2'>
@@ -100,8 +127,8 @@ function Header() {
                     </>
                     :
                     <>
-                        <LoginButton onClick={() => navigate('/login')}>Fazer login</LoginButton>
-                        <MenuMobileButton onClick={() => navigate('/login')}/>
+                        <LoginButton onClick={() => alert("Função em desenvolvimento")}>Fazer login</LoginButton>
+                        <MenuMobileButton onClick={() => alert("Função em desenvolvimento")}/>
                     </>
                 }
             </HeaderButton>
