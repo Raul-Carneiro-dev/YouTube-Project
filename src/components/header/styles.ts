@@ -120,7 +120,7 @@ export const SearchInput = styled.input`
     height: 15px;
     border-radius: 12px;
     background-color: silver;
-    padding: 2px;
+    padding: 4px 4px 4px 10px;
   }
 `;
 

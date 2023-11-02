@@ -15,34 +15,36 @@ import {
 import axios from 'axios';
 import moment from 'moment';
 import { CategoryContexts } from '../../contexts/searchcategory';
+import { useNavigate } from 'react-router-dom';
 
 function VideoComponent() {
 
     const {openMenu} = useContext(UserContexts)
 
-    interface Videos {
-        id: string;
-        snippet: {
-          title: string;
-          thumbnails: {
-            high: {
-              url: string
-            }
-            maxres: {
-              url: string;
-            }
-          }
-          channelTitle: string;
-          publishedAt: string;
-        },
-        statistics: {
-          viewCount: string;
-        }
-      }
+    const navigate = useNavigate()
 
-      const [videos, setVideos] = useState<Videos[]>([]);
+    // interface Videos {
+    //     id: string;
+    //     snippet: {
+    //       title: string;
+    //       thumbnails: {
+    //         high: {
+    //           url: string
+    //         }
+    //         maxres: {
+    //           url: string;
+    //         }
+    //       }
+    //       channelTitle: string;
+    //       publishedAt: string;
+    //     },
+    //     statistics: {
+    //       viewCount: string;
+    //     }
+    //   }
+
+      const {videos, setVideos} = useContext(CategoryContexts)
       const {categoryId} = useContext(CategoryContexts);
-      console.log(categoryId)
 
       const API_KEY = 'AIzaSyDQdA6cW_D8IwKyMHrxHeNDGu0LLsUr3lA';
 
@@ -111,9 +113,9 @@ function VideoComponent() {
     return (
         <MainContainer>
             <Category />
-            <Container openmenu={openMenu}>
-                {videos.map((video) => (
-                    <div key={video.id}>
+            <Container openmenu={openMenu} >
+                {videos.map((video: any) => (
+                    <div key={video.id} onClick={() => navigate(`/video/${video.id}`)}>
                         <ImageBanner openmenu={openMenu} src={video.snippet.thumbnails.maxres?.url || video.snippet.thumbnails.high?.url}/>
                         <TitleContainer>
                             <ChannelImage>

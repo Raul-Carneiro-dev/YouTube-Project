@@ -56,7 +56,8 @@ function Header() {
                    style={{cursor: 'pointer', width: '100px'}}
                    alt="youtube-logo"
                    className='youtube-icon'
-                   src={YoutubeLogo}               
+                   src={YoutubeLogo}  
+                   onClick={() => navigate('/')}             
                 />
                 <span>YouTube</span>
             </LogoContainer>
@@ -72,6 +73,7 @@ function Header() {
                       onKeyDown={(e) => {
                         if (e.key === "Enter") {
                             setSearch(inputValue)
+                            navigate('/search')
                         }
                       }}
                       />
@@ -79,11 +81,9 @@ function Header() {
                 <SearchButton onClick={() => {
                     if(inputValue.trim() === '') {
                         alert('Digite alguma palavra antes de tentar pesquisar')
-                    } else {
+                    }
                         setSearch(inputValue)
                         navigate('/search')
-                    }
-                    
                 }}>
                     <ButtonIcon alt="search" src={SearchIcon}/>
                 </SearchButton>
