@@ -32,10 +32,6 @@ export const ImageBanner = styled.img<{ openmenu: boolean }>`
   background-position: center;
   border-radius: 12px;
 
-  &:hover {
-    background-image: url('https://media.tenor.com/i2ykUtROILwAAAAC/michael-jackson-thriller.gif');
-  }
-
   @media (max-width: 768px) {
     height: 209px;
   }

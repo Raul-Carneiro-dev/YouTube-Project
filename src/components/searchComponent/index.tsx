@@ -132,7 +132,7 @@ function SearchComponent() {
                                         <Description>{video.snippet.description}</Description>
                                 </TextContainer>
                             </TitleContainer>
-                        </Content>
+                        </Content>  
                     </div>
                 ))}
             </Container>

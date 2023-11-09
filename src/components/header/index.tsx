@@ -127,8 +127,8 @@ function Header() {
                     </>
                     :
                     <>
-                        <LoginButton onClick={() => alert("Função em desenvolvimento")}>Fazer login</LoginButton>
-                        <MenuMobileButton onClick={() => alert("Função em desenvolvimento")}/>
+                        <LoginButton onClick={() => navigate("/login")}>Fazer login</LoginButton>
+                        <MenuMobileButton onClick={() => navigate("/login")}/>
                     </>
                 }
             </HeaderButton>

@@ -58,6 +58,7 @@ export const TitleContainer = styled.div`
     padding: 0 0 0 1rem;
     display: flex;
     justify-content: flex-start;
+    align-items: center;
   }
 `;
 
@@ -99,6 +100,9 @@ export const Title = styled.span`
 
   @media (max-width: 768px) {
     margin-left: 3rem;
+    width: 290px;
+    overflow: hidden; /* "overflow" value must be different from "visible" */
+    text-overflow: ellipsis;
   }
 `;
 
@@ -118,7 +122,7 @@ export const Description = styled.div`
   font-family: Roboto, Arial, sans-serif; 
 
   @media (max-width: 768px) {
-    
+    font-size: 10px;
   }
 `;
 

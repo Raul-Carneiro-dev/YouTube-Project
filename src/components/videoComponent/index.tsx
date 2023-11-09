@@ -115,7 +115,7 @@ function VideoComponent() {
             <Category />
             <Container openmenu={openMenu} >
                 {videos.map((video: any) => (
-                    <div key={video.id} onClick={() => navigate(`/video/${video.id}`)}>
+                    <div key={video.id}>
                         <ImageBanner openmenu={openMenu} src={video.snippet.thumbnails.maxres?.url || video.snippet.thumbnails.high?.url}/>
                         <TitleContainer>
                             <ChannelImage>

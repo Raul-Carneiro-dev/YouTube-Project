@@ -36,6 +36,7 @@ export const UserStorage = ({ children }: any) => {
            navigate('/login')
         }).catch ((error) => {
             console.log("Erro no cadastro", error);
+            console.log(email)
         })
     }
 
@@ -51,7 +52,7 @@ export const UserStorage = ({ children }: any) => {
     }
 
     const handleRegisterVideos = (token: string, user_id: string, title: string, views: string, time: string) => {
-        api.post('/videos/create-video', {headers: {Authorization: token}, user_id, title, views, time}).then(() => {
+        api.post('/videos/create-video', {user_id, title, views, time}).then(() => {
             alert('Registrado com sucesso')
          
         }).catch ((error) => { 
